@@ -5,6 +5,9 @@ public class Formule {
     private int prix;
 
     public Formule(int id, int prix) {
+        if (prix < 0) {
+            throw new IllegalStateException();
+        }
         this.id = id;
         this.prix = prix;
     }
