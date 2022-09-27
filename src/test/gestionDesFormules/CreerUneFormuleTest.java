@@ -3,6 +3,7 @@ package test.gestionDesFormules;
 import main.gestionDesFormules.CreeUneFormuleCommand;
 import main.gestionDesFormules.CreerUneFormule;
 import main.gestionDesFormules.Formule;
+import main.gestionDesFormules.PrixNegatifException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +36,6 @@ public class CreerUneFormuleTest {
         CreeUneFormuleCommand creeUneFormuleCommand = new CreeUneFormuleCommand(id, prix);
 
         // When & Then
-        Assertions.assertThrows(IllegalStateException.class, () -> creerUneFormule.execute(creeUneFormuleCommand));
+        Assertions.assertThrows(PrixNegatifException.class, () -> creerUneFormule.execute(creeUneFormuleCommand));
     }
 }
