@@ -7,8 +7,8 @@ public class CreerUneFormule {
         this.formulesRepository = formulesRepository;
     }
 
-    public void execute(int id) {
-        var formule = new Formule(id);
+    public void execute(int id, int prix) {
+        var formule = new Formule(id, prix);
         this.formulesRepository.ajouter(formule);
     }
 }
