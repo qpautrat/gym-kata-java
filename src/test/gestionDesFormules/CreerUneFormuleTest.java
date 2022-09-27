@@ -25,4 +25,16 @@ public class CreerUneFormuleTest {
         Assertions.assertEquals(formule.id(), id);
         Assertions.assertEquals(formule.prix(), prix);
     }
+    @Test
+    public void nePeutPasCreerUneFormuleAvecUnPrixNegatif() {
+        // Given
+        int id = 1;
+        int prix = -100;
+        SpyFormuleRepository formulesRepository = new SpyFormuleRepository();
+        var creerUneFormule = new CreerUneFormule(formulesRepository);
+        CreeUneFormuleCommand creeUneFormuleCommand = new CreeUneFormuleCommand(id, prix);
+
+        // When & Then
+        Assertions.assertThrows(IllegalStateException.class, () -> creerUneFormule.execute(creeUneFormuleCommand));
+    }
 }
