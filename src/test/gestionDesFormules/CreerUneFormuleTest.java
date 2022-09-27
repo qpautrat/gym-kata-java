@@ -10,12 +10,13 @@ public class CreerUneFormuleTest {
     public void creerUneFormule() {
         // Given
         int id = 1;
-        var creerUneFormule = new CreerUneFormule();
+        SpyFormuleRepository formulesRepository = new SpyFormuleRepository();
+        var creerUneFormule = new CreerUneFormule(formulesRepository);
 
         // When
-        var formule = creerUneFormule.execute(id);
+        creerUneFormule.execute(id);
 
         // Then
-        Assertions.assertEquals(formule.id(), id);
+        Assertions.assertEquals(formulesRepository.recupererFormule().id(), id);
     }
 }
