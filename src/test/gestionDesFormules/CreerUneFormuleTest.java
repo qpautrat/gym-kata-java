@@ -30,7 +30,7 @@ public class CreerUneFormuleTest {
         // Given
         int id = 1;
         int prix = -100;
-        SpyFormuleRepository formulesRepository = new SpyFormuleRepository();
+        DummyFormuleRepository formulesRepository = new DummyFormuleRepository();
         var creerUneFormule = new CreerUneFormule(formulesRepository);
         CreeUneFormuleCommand creeUneFormuleCommand = new CreeUneFormuleCommand(id, prix);
 
