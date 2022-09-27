@@ -1,11 +1,9 @@
 package main.gestionDesFormules;
 
-import test.gestionDesFormules.SpyFormuleRepository;
-
 public class CreerUneFormule {
-    private SpyFormuleRepository formulesRepository;
+    private FormuleRepository formulesRepository;
 
-    public CreerUneFormule(SpyFormuleRepository formulesRepository) {
+    public CreerUneFormule(FormuleRepository formulesRepository) {
         this.formulesRepository = formulesRepository;
     }
 

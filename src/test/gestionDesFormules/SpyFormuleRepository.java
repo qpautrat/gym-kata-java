@@ -1,8 +1,9 @@
 package test.gestionDesFormules;
 
 import main.gestionDesFormules.Formule;
+import main.gestionDesFormules.FormuleRepository;
 
-public class SpyFormuleRepository {
+public class SpyFormuleRepository implements FormuleRepository {
     private Formule formule;
 
     public Formule recupererFormule() {
